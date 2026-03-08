@@ -5757,7 +5757,7 @@ function sendMessageToFirebase() {
         newMessageRef.set(messageData)
             .catch((error) => {
                 console.error('Error sending message to Firebase:', error);
-                showNotification('შეტყობინება შენახულია მხოლოდ ლოკალურად', false);
+                showNotification('სერვერი გადატვირთულია. ინფორმაციები ინახება მხოლოდ ლოკალურად (101+ მომხმარებელი გვერდზე). განტვირთვის შემდგომ ინფორმაციის შენახვა შესაძლებელი იქნება გლობალურად!', false);
             });
     } else {
         showNotification('შეტყობინება შენახულია ლოკალურად', false);
