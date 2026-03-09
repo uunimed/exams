@@ -2165,7 +2165,6 @@ body {
     gap: 5px !important;
   }
 
-  /* Progress modal */
   .modal[style*="max-width: 500px"] .modal-buttons,
   .modal-overlay[data-type="progress-resume"] .modal-buttons {
     display: flex !important;
@@ -2186,7 +2185,6 @@ body {
     font-size: 14px !important;
   }
 
-  /* NORMAL MODE */
   .normal-mode-container {
     width: 100%;
     height: 100%;
@@ -2252,7 +2250,6 @@ body {
     display: none !important;
 }
 
-  /* Bottom panel */
   .bottom-left-container {
     position: fixed !important;
     bottom: 3px !important;
@@ -2364,7 +2361,6 @@ body {
     color: var(--accent) !important;
   }
 
-  /* Chat window */
   .chat-window {
     position: fixed !important;
     bottom: 45px !important;
@@ -2445,7 +2441,6 @@ body {
     height: 36px !important;
   }
 
-  /* EXAM MODE */
   .exam-mode-container {
     display: flex !important;
     flex-direction: column !important;
@@ -2579,7 +2574,6 @@ body {
     display: flex !important;
   }
 
-  /* Bottom panel for exam mode */
   .exam-mode-container .bottom-left-container,
   .normal-mode-container .bottom-left-container {
     position: fixed !important;
@@ -2654,7 +2648,6 @@ body {
     display: none !important;
   }
 
-  /* Mobile navigation */
   .normal-mode-container.active ~ .exam-mode-container .exam-navigation-container,
   .normal-mode-container:not(.hidden) + .exam-mode-container .exam-navigation-container,
   .normal-mode-container .exam-navigation-container {
@@ -2863,6 +2856,129 @@ body {
 .hidden {
   display: none !important;
 }
+
+/* ==================== DONATION SECTION STYLES ==================== */
+.donation-section {
+  width: 100%;
+  max-width: 800px;
+  margin: 0px auto 0;
+  text-align: center;
+  cursor: pointer;
+  padding: 0px 0;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.donation-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #e11d48;
+  margin-bottom: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.donation-text {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #475569;
+  margin-bottom: 10px;
+}
+
+.donation-copy-text {
+  font-size: 14px;
+  color: #0ea5a4;
+  font-weight: 500;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.donation-section:hover .donation-copy-text {
+  opacity: 1;
+}
+
+.donation-account {
+  display: none;
+}
+
+/* ==================== DONATION SECTION STYLES ==================== */
+.heart-particle {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  width: 40px; 
+  height: 40px;
+  animation: gentleFloatUp 2.5s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
+  fill: #ffb6c1; 
+  opacity: 0; 
+  filter: drop-shadow(0 2px 4px rgba(255, 182, 193, 0.2)); 
+}
+
+@keyframes gentleFloatUp {
+  0% {
+    transform: translateY(0) scale(0.6);
+    opacity: 0;
+    bottom: 10px;
+  }
+  15% {
+    transform: translateY(-15px) scale(1); 
+    opacity: 0.4; 
+  }
+  80% {
+    transform: translateY(-80vh) scale(1); 
+    opacity: 0.4; 
+  }
+  100% {
+    transform: translateY(-100vh) scale(1.1); 
+    opacity: 0; 
+  }
+}
+
+.copy-notification {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(14, 165, 164, 0.95);
+  color: white;
+  padding: 20px 40px;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: 600;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  animation: notificationPop 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+@keyframes notificationPop {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+.copy-notification svg {
+  width: 24px;
+  height: 24px;
+  fill: white;
+  animation: heartBeat 0.6s ease infinite;
+}
+
+@keyframes heartBeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
 </style>
 </head>
 <body>
@@ -3294,8 +3410,30 @@ body {
       </div>
       
       <button id="startBtn" class="start-btn" disabled>დაწყება</button>
-    </div>
+        </div>
 
+  <div id="donationSection" class="donation-section">
+    <div class="donation-title">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="#e11d48">
+        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+      </svg>
+      დონაცია
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="#e11d48">
+        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+      </svg>
+    </div>
+    <div class="donation-text">
+      გვერდი შეიქმნა მთელი გულით, რათა მაქსიმალური კომფორტის ზონაში იყოთ მანამ,<br>
+      სანამ გამოცდებისთვის ემზადებით.<br>
+      მიუხედავად იმისა, რომ გვერდი ფინანსური დაინტერესების გარეშე მუშაობს,<br>
+      თუ დონაციას გადაწყვეტთ, გულებს კიდევ უფრო გაათბობთ.<br>
+      <span class="donation-copy-text">დააჭირეთ ტექსტს, რომ დაკოპირდეს ანგარიშის ნომერი</span>
+    </div>
+    <div id="donationAccount" class="donation-account"></div>
+  </div>
+  
+  <div id="testScreen" class="test-screen">
+  
     <div id="testScreen" class="test-screen">
       <div id="normalModeContainer" class="normal-mode-container hidden">
         <div id="questionText" class="question-text">იტვირთება...</div>
@@ -4270,6 +4408,11 @@ function showWrongQuestionsExhaustedModal() {
 function returnToMainPage() {
   console.log("Returning to main page...");
   
+  const donationSection = document.getElementById('donationSection');
+  if (donationSection) {
+    donationSection.style.display = 'block';
+  }
+  
   sessionTests = [];
   currentIndex = 0;
   autoMode = false;
@@ -4589,6 +4732,156 @@ function loadSelectedModule() {
     console.log("Firebase not available, checking localStorage");
     loadSelectedModuleFromLocal();
   }
+}
+
+// ==================== DONATION FUNCTIONS ====================
+let accountNumber = '';
+
+async function loadAccountNumber() {
+  try {
+    const response = await fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vTAKLvhjOkhFoadqGeDcS_T74DdtGNqLPY30zld05OjmbwwP_i-anVEF0uNNTtb29NoPKLm6XTAxIGu/pub?gid=1673705444&single=true&output=csv');
+    const csvText = await response.text();
+    
+    const lines = csvText.split('\n');
+    if (lines.length > 0) {
+      const firstLine = lines[0].trim();
+      
+      if (firstLine.includes(',')) {
+        const data = firstLine.split(',');
+        accountNumber = data[0] ? data[0].trim() : '';
+      } else {
+        accountNumber = firstLine;
+      }
+      
+      if (accountNumber) {
+        document.getElementById('donationAccount').textContent = accountNumber;
+        console.log("Account number loaded:", accountNumber);
+      } else {
+        console.warn("Account number is empty");
+      }
+    }
+  } catch (error) {
+    console.error('Error loading account number:', error);
+    accountNumber = 'GE00XX0000000000000000';
+  }
+}
+
+function createHeartParticles() {
+  const heartCount = 25;
+  
+  for (let i = 0; i < heartCount; i++) {
+    const svgNS = "http://www.w3.org/2000/svg";
+    const svg = document.createElementNS(svgNS, "svg");
+    
+    svg.setAttribute("class", "heart-particle");
+    svg.setAttribute("viewBox", "0 0 24 24");
+    svg.style.position = "fixed";
+    svg.style.pointerEvents = "none";
+    svg.style.zIndex = "9999";
+    svg.style.willChange = "transform, opacity";
+    
+    const size = 40 + Math.random() * 20;
+    svg.style.width = size + 'px';
+    svg.style.height = size + 'px';
+    
+    const path = document.createElementNS(svgNS, "path");
+    path.setAttribute("d", "M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z");
+    svg.appendChild(path);
+    
+    svg.style.left = Math.random() * 100 + '%';
+    svg.style.bottom = '0px';
+    
+    const horizontalDrift = (Math.random() - 0.5) * 100;
+    svg.style.setProperty('--drift', horizontalDrift + 'px');
+    
+    const duration = 2 + Math.random() * 1;
+    svg.style.animationDuration = duration + 's';
+    
+    svg.style.animationDelay = Math.random() * 0.3 + 's';
+    
+    document.body.appendChild(svg);
+    
+    setTimeout(() => {
+      if (svg.parentNode) {
+        svg.remove();
+      }
+    }, 3500);
+  }
+}
+
+
+function showCopyNotification() {
+  const existingNotification = document.querySelector('.copy-notification');
+  if (existingNotification) existingNotification.remove();
+  
+  const notification = document.createElement('div');
+  notification.className = 'copy-notification';
+  notification.innerHTML = `
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+    </svg>
+    ანგარიშის ნომერი დაკოპირდა, დიდი მადლობა!
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+    </svg>
+  `;
+  
+  document.body.appendChild(notification);
+  
+  setTimeout(() => {
+    notification.remove();
+  }, 3000);
+}
+
+function initDonationSection() {
+  const donationSection = document.getElementById('donationSection');
+  
+  if (!donationSection) return;
+  
+  loadAccountNumber();
+  
+  donationSection.addEventListener('click', async function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    if (!accountNumber) {
+      await loadAccountNumber();
+    }
+    
+    if (accountNumber) {
+      try {
+        await navigator.clipboard.writeText(accountNumber);
+        
+        createHeartParticles();
+        
+        showCopyNotification();
+        
+      } catch (err) {
+        console.log('Clipboard API failed, using fallback method');
+        
+        const textarea = document.createElement('textarea');
+        textarea.value = accountNumber;
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.select();
+        textarea.setSelectionRange(0, 99999); 
+        
+        try {
+          document.execCommand('copy');
+          createHeartParticles();
+          showCopyNotification();
+        } catch (fallbackErr) {
+          console.error('Fallback copy failed:', fallbackErr);
+          showNotification('კოპირება ვერ მოხერხდა. გთხოვთ დააკოპიროთ ხელით: ' + accountNumber, true);
+        }
+        
+        document.body.removeChild(textarea);
+      }
+    } else {
+      showNotification('ანგარიშის ნომერი ვერ მოიძებნა', true);
+    }
+  });
 }
 
 function loadUserFromFirebaseAndApply() {
@@ -5793,7 +6086,6 @@ function addMessageToChat(author, message, isSent, timestamp, isAdmin = false) {
         minute: '2-digit'
     });
     
-    // ადმინის ბეიჯი
     const adminBadge = isAdmin ? 
         '<span style="background: #0ea5a4; color: white; font-size: 10px; padding: 2px 6px; border-radius: 10px; margin-left: 8px; font-weight: 600;">ადმინისტრატორი</span>' : 
         '';
@@ -7037,6 +7329,11 @@ function loadCSV() {
     
     allTests = allTestsWithTopics;
     
+const donationSection = document.getElementById('donationSection');
+if (donationSection && donationSection.style.display === 'none') {
+  donationSection.style.display = 'block';
+}
+  
     if (!allTests.length){
       showNotification('ტესტები ვერ მოიძებნა');
       loaderOverlay.innerHTML = '<div style="color: var(--danger); font-weight: 600; text-align: center; padding: 20px;">ტესტები ვერ მოიძებნა<br><small>გთხოვთ განაახლოთ გვერდი</small></div>';
@@ -7349,6 +7646,12 @@ function startTest() {
   if (!selectedModule) {
     showNotification('გთხოვთ აირჩიოთ მოდული');
     return;
+  }
+  
+  // დამალე დონაციის განყოფილება ტესტების დაწყებისას
+  const donationSection = document.getElementById('donationSection');
+  if (donationSection) {
+    donationSection.style.display = 'none';
   }
   
   currentTestType = selectedModule;
@@ -7967,7 +8270,6 @@ function bindQuestionCounterEvent() {
   });
 }
 
-// ==================== FIXED: checkExistingProgress with debounce ====================
 function checkExistingProgress() {
   if (isProgressModalShowing) {
     console.log("Progress modal already showing, skipping");
@@ -8462,7 +8764,6 @@ function showTermsPage() {
     
     document.getElementById('closeTermsBtn').addEventListener('click', closeTermsPage);
     
-    // Load terms from sheet
     loadTermsFromSheet().then(terms => {
         const termsContent = document.getElementById('termsContent');
         if (!termsContent) return;
@@ -8490,7 +8791,6 @@ function showTermsPage() {
             
             if (!text) return;
             
-            // მოხმარების წესები - A1
             if (index === 0 && text === "მოხმარების წესები") {
                 termsHTML += `
                     <div style="margin: ${isFirstSection ? '0 0 24px 0' : '48px 0 24px 0'}; font-size: 28px; font-weight: 600; color: #0f172a; letter-spacing: -0.3px;">
@@ -8501,7 +8801,6 @@ function showTermsPage() {
                 return;
             }
             
-            // მოხმარების პირობები - A67
             if (index === 66 && text === "მოხმარების პირობები") {
                 termsHTML += `
                     <div style="margin: 48px 0 24px 0; font-size: 28px; font-weight: 600; color: #0f172a; letter-spacing: -0.3px;">
@@ -8511,7 +8810,6 @@ function showTermsPage() {
                 return;
             }
             
-            // მთავარი სექციები (1, 2, 3...)
             if (/^\d+$/.test(number) && text) {
                 termsHTML += `
                     <div style="margin: 20px 0 8px 0;">
@@ -8522,7 +8820,6 @@ function showTermsPage() {
                 return;
             }
             
-            // დონე 1 (1.1, 1.2, 2.1...)
             if (/^\d+\.\d+$/.test(number) && text) {
                 termsHTML += `
                     <div style="margin: 6px 0 6px 24px;">
@@ -8533,7 +8830,6 @@ function showTermsPage() {
                 return;
             }
             
-            // დონე 2 (1.1.1, 1.1.2, 2.5.1...)
             if (/^\d+\.\d+\.\d+$/.test(number) && text) {
                 termsHTML += `
                     <div style="margin: 4px 0 4px 48px;">
@@ -8544,7 +8840,6 @@ function showTermsPage() {
                 return;
             }
             
-            // დონე 3 (1.1.1.1, 2.5.1.1...)
             if (/^\d+\.\d+\.\d+\.\d+$/.test(number) && text) {
                 termsHTML += `
                     <div style="margin: 3px 0 3px 72px;">
@@ -8555,7 +8850,6 @@ function showTermsPage() {
                 return;
             }
             
-            // სხვა შემთხვევები
             if (number && text) {
                 termsHTML += `
                     <div style="margin: 8px 0 8px 0;">
@@ -8566,7 +8860,6 @@ function showTermsPage() {
             }
         });
         
-        // ბოლო განახლება
         const lastUpdated = terms.find(t => t.text && t.text.includes('ბოლო განახლება'));
         if (lastUpdated) {
             termsHTML += `
@@ -8682,6 +8975,10 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   }
   
+  setTimeout(() => {
+  initDonationSection();
+}, 500);
+
   document.addEventListener('click', (e) => {
     if (isEditingQuestionNumber && currentQuestionEl && !currentQuestionEl.contains(e.target)) {
       isEditingQuestionNumber = false;
