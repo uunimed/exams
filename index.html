@@ -4515,6 +4515,11 @@ function startWrongQuestionsMode() {
     return;
   }
   
+  const donationSection = document.getElementById('donationSection');
+  if (donationSection) {
+    donationSection.style.display = 'none';
+  }
+  
   isWrongQuestionsMode = true;
   
   sessionTests = wrongTests.map((t, idx) => ({ 
