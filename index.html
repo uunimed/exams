@@ -7717,10 +7717,14 @@ function startTest() {
   currentTestType = selectedModule;
   console.log("Test type set to:", currentTestType);
   
-  if (!modeSequential.checked && !modeExam.checked) {
-    showNotification('გთხოვთ აირჩიოთ ერთი რეჟიმი მაინც');
-    return;
-  }
+const isSequentialChecked = modeSequential.checked;
+const isShuffleQuestionsChecked = modeShuffleQuestions.checked;
+const isExamChecked = modeExam.checked;
+
+if (!isSequentialChecked && !isShuffleQuestionsChecked && !isExamChecked) {
+  showNotification('გთხოვთ აირჩიოთ ერთი რეჟიმი მაინც');
+  return;
+}
 
   if (window.savedProgress && !currentTestType) {
     const testTypeSelect = document.getElementById('testTypeSelect');
